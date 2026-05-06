@@ -1,6 +1,7 @@
 {% load static %}
 <html>
 
+
 <head>
     <title>Django blog</title>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400">
@@ -8,13 +9,21 @@
 </head>
 
 <body>
-    <header>
-        <h1><a href="{% url 'home' %}">Django blog</a></h1>
-    </header>
-
     <div>
-        {% block content %}
-        {% endblock content %}
+        <header>
+            <div class="nav-left">
+                <h1><a href="{% url 'home' %}">Django blog</a></h1>
+            </div>
+            <div class="nav-right">
+                <a href="{% url 'post_new' %}">+ New Blog Post</a>
+            </div>
+        </header>
+
+        <div>
+            {% block content %}
+            {% endblock content %}
+        </div>
+
     </div>
 </body>
 
