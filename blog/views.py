@@ -1,3 +1,5 @@
+from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -15,10 +17,14 @@ class BlogDetailView(DetailView):
     template_name = "post_detail.html"
 
 
-class BlogCreateView(CreateView):
+class BlogCreateView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = "post_new.html"
-    fields = ["title", "author", "body"]
+    fields = ["title", "body"]
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 class BlogUpdateView(UpdateView):
@@ -31,3 +37,7 @@ class BlogDeleteView(DeleteView):
     model = Post
     template_name = "post_delete.html"
     success_url = reverse_lazy("home")
+
+
+def page_not_found(request, exception):
+    return render(request, '404.html', status=404)

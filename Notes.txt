@@ -1,3 +1,6 @@
 * Superuser:
     Username: admin
     Password: Admin123
+
+    Username: fausto
+    Password: Catita04FMateo21
