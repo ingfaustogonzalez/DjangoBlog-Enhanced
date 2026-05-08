@@ -26,7 +26,8 @@ This repository serves as part of my personal software development portfolio and
 This project was developed following the examples from the book:
 
 **Django for Beginners (5th Edition)**  
-By William S. Vincent
+By William S. Vincent  
+ISBN: 9781735467269
 
 The original tutorial chapters used as the base were:
 
