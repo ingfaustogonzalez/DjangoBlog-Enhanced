@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-wdpqv1fgu(*+m6zg_o!3k=g&4=mwl2i$$or=hp^t&(l*$peqoq"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
@@ -93,6 +93,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        'OPTIONS': {
+            'min_length': 8,  # Requirement: 8 characters
+        },
     },
     {
         "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
