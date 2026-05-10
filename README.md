@@ -18,6 +18,34 @@ This repository serves as part of my personal software development portfolio and
 - Django class-based views
 - Templates and routing
 - Custom error handling
+- Automated unit and integration tests
+
+## Testing
+
+This project includes automated unit and integration tests using Django’s built-in testing framework.
+
+The test suite validates:
+
+- Database models
+- URL routing
+- List and detail views
+- Create, update, and delete operations
+- Authentication behavior
+- HTTP response status codes
+- Template rendering
+- Error handling for non-existing posts
+
+To run the tests:
+
+```bash
+python3 manage.py test
+```
+
+The test file used in this project is:
+
+```text
+blog/tests.py
+```
 
 ---
 
@@ -191,6 +219,107 @@ Potential future improvements may include:
 - Search functionality
 - Responsive UI improvements
 - Deployment to a cloud platform
+
+---
+
+# Running the Django Project
+
+## 1. Create and Activate a Virtual Environment
+
+```bash
+python3 -m venv .venv
+```
+
+Creates a Python virtual environment inside a folder named `.venv`.
+
+---
+
+## 2. Activate the Virtual Environment
+
+### macOS / Linux
+
+```bash
+source .venv/bin/activate
+```
+
+Activates the virtual environment so all installed packages remain isolated from the global Python installation.
+
+### Windows (PowerShell)
+
+```powershell
+.venv\Scripts\activate
+```
+
+---
+
+## 3. Upgrade pip (Optional but Recommended)
+
+```bash
+pip install --upgrade pip
+```
+
+Updates `pip` to the latest version.
+
+---
+
+## 4. Install Project Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Installs all required Python packages listed in `requirements.txt`.
+
+---
+
+## 5. Apply Database Migrations
+
+```bash
+python3 manage.py migrate
+```
+
+Creates and updates the database tables required by Django.
+
+> **Important:**  
+> This command must be executed before creating the superuser because Django authentication tables need to exist first.
+
+---
+
+## 6. Create the Django Superuser
+
+```bash
+python3 manage.py createsuperuser
+```
+
+Creates an administrator account to access the Django admin panel.
+
+You will be prompted to enter:
+
+- Username
+- Email address (optional)
+- Password
+
+---
+
+## 7. Run the Development Server
+
+```bash
+python3 manage.py runserver
+```
+
+Starts the Django development server.
+
+By default, the project will be available at:
+
+```text
+http://127.0.0.1:8000/
+```
+
+The Django admin panel will be available at:
+
+```text
+http://127.0.0.1:8000/admin/
+```
 
 ---
 
