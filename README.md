@@ -145,7 +145,7 @@ A custom **404 Page Not Found** page was added to improve the user experience wh
 
 ## Edit Post Page - User Not Logged In
 
-![Edit Post Page Not Logged In](assets/Screenshot_08_edit_post_page_not_loggedin.png)
+![Edit Post Page Not Logged In](assets/Screenshot_08_edit_post_page_not_logged_in.png)
 
 ---
 
@@ -165,13 +165,13 @@ Please note that the user attempting to edit the post is not the original author
 
 ## Delete Post Page - User Not Logged In
 
-![Delete Post Page Not Logged In](assets/Screenshot_11_delete_post_page_not_loggedin.png)
+![Delete Post Page Not Logged In](assets/Screenshot_11_delete_post_page_not_logged_in.png)
 
 ---
 
 ## Delete Post Page - No Permission
 
-![Delete Post Page No Permission](assets/Screenshot_12_delete_post_pageno_permission_to_delete.png)
+![Delete Post Page No Permission](assets/Screenshot_12_delete_post_page_no_permission_to_delete.png)
 
 Please note that the user attempting to delete the post is not the original author of the post.
 
@@ -224,11 +224,115 @@ Potential future improvements may include:
 
 # Running the Django Project
 
-## 1. Create and Activate a Virtual Environment
+## Python Version Requirement
+
+This project was developed using:
+
+- Python 3.12.13
+- Django 5.0.14
+
+For compatibility reasons, it is recommended to use Python 3.12.
+
+## Verify Your Python Version
+
+Before creating the virtual environment, verify your installed Python version:
 
 ```bash
-python3 -m venv .venv
+python3 --version
 ```
+
+Expected output:
+
+```text
+Python 3.12.13
+```
+
+If multiple Python versions are installed on your system, you can also check:
+
+```bash
+python3.12 --version
+```
+
+## Installing Python 3.12
+
+If your system has a different Python version installed, you must install Python 3.12 before creating the virtual environment.
+
+---
+
+### macOS
+
+Using Homebrew:
+
+```bash
+brew install python@3.12
+```
+
+Verify the installation:
+
+```bash
+python3.12 --version
+```
+
+Expected output:
+
+```text
+Python 3.12.13
+```
+
+---
+
+### Ubuntu / Debian
+
+```bash
+sudo apt update
+sudo apt install python3.12 python3.12-venv
+```
+
+Verify the installation:
+
+```bash
+python3.12 --version
+```
+
+---
+
+### Windows
+
+Download Python 3.12 from the official Python website:
+
+```text
+https://www.python.org/downloads/
+```
+
+During installation, make sure to enable:
+
+```text
+Add Python to PATH
+```
+
+Verify the installation in PowerShell or CMD:
+
+```powershell
+python --version
+```
+
+or:
+
+```powershell
+py -3.12 --version
+```
+
+---
+
+## 1. Create and Activate a Virtual Environment with Python 3.12
+
+Once Python 3.12 is installed:
+
+```bash
+python3.12 -m venv .venv
+```
+
+This guarantees the virtual environment uses Python 3.12 even if other Python versions exist on the system.
 
 Creates a Python virtual environment inside a folder named `.venv`.
 
